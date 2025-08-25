@@ -8,48 +8,53 @@ All colors MUST be HSL for consistency and theming.
 
 @layer base {
   :root {
-    /* Base System Colors */
-    --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
+    /* Modern social media color palette */
+    --background: 0 0% 98%;
+    --foreground: 222.2 84% 4.9%;
 
     /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 222.2 84% 4.9%;
 
     /* Popover System */
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    /* Trust & Authority Colors */
-    --primary: 217 91% 35%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 217 91% 65%;
-    --primary-dark: 217 91% 25%;
+    /* Primary Brand Colors */
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 221 83% 45%;
+    --primary-light: 221 83% 65%;
 
     /* Professional Neutrals */
-    --secondary: 215 15% 92%;
-    --secondary-foreground: 215 25% 25%;
+    --secondary: 210 40% 94%;
+    --secondary-foreground: 222.2 84% 4.9%;
 
     /* Subtle Backgrounds */
-    --muted: 215 15% 95%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 9% 46%;
 
     /* Interactive Elements */
-    --accent: 215 25% 88%;
-    --accent-foreground: 215 25% 15%;
+    --accent: 221 83% 53%;
+    --accent-foreground: 210 40% 98%;
 
-    /* Crisis Alert Colors */
-    --destructive: 0 75% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --warning: 35 85% 55%;
-    --warning-foreground: 0 0% 100%;
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 89%;
     --verified: 142 76% 36%;
-    --verified-foreground: 0 0% 100%;
+    --verified-foreground: 355.7 100% 97.3%;
 
     /* System Elements */
-    --border: 215 15% 88%;
-    --input: 215 15% 95%;
-    --ring: 217 91% 35%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 83% 53%;
+
+    /* Social Media Specific */
+    --social-bg: 0 0% 98%;
+    --feed-card: 0 0% 100%;
+    --hover-bg: 221 83% 97%;
 
     /* Design Tokens */
     --radius: 0.75rem;
@@ -90,33 +95,43 @@ All colors MUST be HSL for consistency and theming.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 221 83% 45%;
+    --primary-light: 221 83% 65%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 222 47% 11%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 221 83% 53%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 89%;
+    --verified: 142 76% 36%;
+    --verified-foreground: 355.7 100% 97.3%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 221 83% 53%;
+
+    --social-bg: 224 71% 4%;
+    --feed-card: 223 47% 11%;
+    --hover-bg: 221 39% 11%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

@@ -2,13 +2,30 @@ import { SearchVerifyFeed } from '@/components/SearchVerifyFeed';
 import { SocialSidebar } from '@/components/SocialSidebar';
 import { MisinformationDashboard } from '@/components/MisinformationDashboard';
 import { AlertGenerator } from '@/components/AlertGenerator';
+import { UserMenu } from '@/components/UserMenu';
 import { Shield, Search, BarChart3, Megaphone, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useAuth } from '@/hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
   const [activeView, setActiveView] = useState('feed');
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if user needs to complete onboarding
+    const checkOnboarding = async () => {
+      if (user) {
+        // This could be expanded to check if user has completed profile setup
+        // For now, we'll assume they might need onboarding if coming from social auth
+        // and don't have display_name set
+      }
+    };
+    checkOnboarding();
+  }, [user]);
 
   return (
     <div className="min-h-screen bg-social-bg">
@@ -63,6 +80,7 @@ const Index = () => {
               <Button size="sm" className="hidden sm:flex">
                 Report Misinformation
               </Button>
+              <UserMenu />
             </div>
           </div>
         </div>

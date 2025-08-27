@@ -1,5 +1,6 @@
-import { SearchVerifyFeed } from '@/components/SearchVerifyFeed';
-import { SocialSidebar } from '@/components/SocialSidebar';
+import { SocialFeed } from '@/components/SocialFeed';
+import { EnhancedSidebar } from '@/components/EnhancedSidebar';
+import { CreateClaimModal } from '@/components/CreateClaimModal';
 import { MisinformationDashboard } from '@/components/MisinformationDashboard';
 import { AlertGenerator } from '@/components/AlertGenerator';
 import { UserMenu } from '@/components/UserMenu';
@@ -77,9 +78,7 @@ const Index = () => {
               <Badge variant="outline" className="animate-pulse">
                 Live
               </Badge>
-              <Button size="sm" className="hidden sm:flex">
-                Report Misinformation
-              </Button>
+              <CreateClaimModal onClaimCreated={() => window.location.reload()} />
               <UserMenu />
             </div>
           </div>
@@ -91,7 +90,7 @@ const Index = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Main Feed */}
           <div className="lg:col-span-3">
-            {activeView === 'feed' && <SearchVerifyFeed />}
+            {activeView === 'feed' && <SocialFeed />}
             {activeView === 'dashboard' && <MisinformationDashboard />}
             {activeView === 'alerts' && <AlertGenerator />}
           </div>
@@ -99,7 +98,7 @@ const Index = () => {
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-24">
-              <SocialSidebar />
+              <EnhancedSidebar />
             </div>
           </div>
         </div>

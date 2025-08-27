@@ -14,6 +14,122 @@ export type Database = {
   }
   public: {
     Tables: {
+      claim_topics: {
+        Row: {
+          claim_id: string
+          created_at: string
+          id: string
+          topic_id: string
+        }
+        Insert: {
+          claim_id: string
+          created_at?: string
+          id?: string
+          topic_id: string
+        }
+        Update: {
+          claim_id?: string
+          created_at?: string
+          id?: string
+          topic_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "claim_topics_claim_id_fkey"
+            columns: ["claim_id"]
+            isOneToOne: false
+            referencedRelation: "claims"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "claim_topics_topic_id_fkey"
+            columns: ["topic_id"]
+            isOneToOne: false
+            referencedRelation: "topics"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      claims: {
+        Row: {
+          confidence_score: number | null
+          content: string
+          created_at: string
+          id: string
+          image_url: string | null
+          is_new: boolean | null
+          location: string | null
+          source_url: string | null
+          updated_at: string
+          urgency: string | null
+          user_id: string
+          verification_status: string | null
+        }
+        Insert: {
+          confidence_score?: number | null
+          content: string
+          created_at?: string
+          id?: string
+          image_url?: string | null
+          is_new?: boolean | null
+          location?: string | null
+          source_url?: string | null
+          updated_at?: string
+          urgency?: string | null
+          user_id: string
+          verification_status?: string | null
+        }
+        Update: {
+          confidence_score?: number | null
+          content?: string
+          created_at?: string
+          id?: string
+          image_url?: string | null
+          is_new?: boolean | null
+          location?: string | null
+          source_url?: string | null
+          updated_at?: string
+          urgency?: string | null
+          user_id?: string
+          verification_status?: string | null
+        }
+        Relationships: []
+      }
+      comments: {
+        Row: {
+          claim_id: string
+          content: string
+          created_at: string
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          claim_id: string
+          content: string
+          created_at?: string
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          claim_id?: string
+          content?: string
+          created_at?: string
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "comments_claim_id_fkey"
+            columns: ["claim_id"]
+            isOneToOne: false
+            referencedRelation: "claims"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -52,6 +168,38 @@ export type Database = {
           website?: string | null
         }
         Relationships: []
+      }
+      reactions: {
+        Row: {
+          claim_id: string
+          created_at: string
+          id: string
+          reaction_type: string
+          user_id: string
+        }
+        Insert: {
+          claim_id: string
+          created_at?: string
+          id?: string
+          reaction_type: string
+          user_id: string
+        }
+        Update: {
+          claim_id?: string
+          created_at?: string
+          id?: string
+          reaction_type?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reactions_claim_id_fkey"
+            columns: ["claim_id"]
+            isOneToOne: false
+            referencedRelation: "claims"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       topics: {
         Row: {
